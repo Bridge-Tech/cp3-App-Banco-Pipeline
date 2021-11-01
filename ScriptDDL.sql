@@ -1,5 +1,5 @@
 DROP TABLE tb_conta cascade constraints;
-DROP TABLE tb_cliente cascade constraints
+DROP TABLE tb_cliente cascade constraints;
             
 CREATE TABLE tb_cliente (
     id     NUMBER(10) NOT NULL,
