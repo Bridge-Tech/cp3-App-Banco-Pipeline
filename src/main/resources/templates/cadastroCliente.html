@@ -148,17 +148,25 @@
   <body>
     <div class="main-block">
       <h1>Novo Cliente</h1>
-      <form action="/">
-        <label id="icon" for="name"><i class="fas fa-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Nome" required/>
-        <label id="icon" for="name"><i class="fas fa-doc"></i></label>
-        <input type="text" name="name" id="name" placeholder="CPF" required/>
+	<form action="/clientes" method="post">
+        <label id="icon" for="nome"><i class="fas fa-doc"></i></label>
+        <input type="text" name="nome" id="nome" placeholder="Nome" required/>
+        <label id="icon" for="nascimento"><i class="fas fa-doc"></i></label>
+        <input type="text" name="nascimento" id="nascimento" placeholder="Data de nascimento" required/>
+        <label id="icon" for="tipo"><i class="fas fa-doc"></i></label>
+        <input type="text" name="tipo" id="tipo" placeholder="Tipo conta (PJ/PF)" required/>
+        <label id="icon" for="documento"><i class="fas fa-doc"></i></label>
+        <input type="text" name="documento" id="documento" placeholder="CPF/CNPJ" required/>
+        <label id="icon" for="endereco"><i class="fas fa-doc"></i></label>
+        <input type="text" name="endereco" id="endereco" placeholder="Endereco" required/>
+        
+        
         <hr>
         <div class="btn-block">
           <button type="submit" href="/">Submit</button>
         </div>
         <div class="btn-block">
-          <a href="/home">Cancel</a>
+          <a href="/clientes">Cancel</a>
         </div>
       </form>
     </div>

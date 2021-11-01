@@ -148,37 +148,43 @@
   <body>
   	<div class="main-block">
         <div class="btn-block" >
-   		 	<a class="ancor" style="text-decoration:none; padding: 5px" href="/home">Mostrar Contas</a>
+   		 	<a class="ancor" style="text-decoration:none; padding: 5px" href="/clientes">Mostrar Clientes</a>
       	</div>
         
-     	<ul th:each="conta : ${contas}">
+     	<ul th:each="cliente : ${clientes}">
       		<li style="list-style: none">
 	      		<div style="background-color: teal; width: 270px; border-radius: 5px; padding: 5px">
 		      		<div style="display: flex; flex-direction: row; margin-top: 5px">
-		      			<p style="margin-right: 5px; color: white">Agencia: </p>
-		      			<p style="margin-right: 5px; color: white" th:text="${conta.agencia}"></p>
-			      		<p style="margin-right: 5px; color: white">Numero: </p>
-		      			<p style="margin-right: 5px; color: white" th:text="${conta.numero}"></p>
+		      			<p style="margin-right: 5px; color: white">Nome: </p>
+		      			<p style="margin-right: 5px; color: white" th:text="${cliente.nome}"></p>
+		      		</div>
+			      	<div style="display: flex; flex-direction: row; margin-top: 5px">
+			      		<p style="margin-right: 5px; color: white">Data nascimento: </p>
+		      			<p style="margin-right: 5px; color: white" th:text="${cliente.dt_nascimento}"></p>
 		      		</div>
 		      		<div style="display: flex; flex-direction: row; margin-top: 5px">
-			      		<p style="margin-right: 5px; color: white">Abertura: </p>
-			      		<p style="margin-right: 5px; color: white" th:text="${conta.dt_abertura}"></p>
+			      		<p style="margin-right: 5px; color: white">Documento: </p>
+			      		<p style="margin-right: 5px; color: white" th:text="${cliente.documento}"></p>
+      					<p style="margin-right: 5px; color: white">Tipo: </p>
+			      		<p style="margin-right: 5px; color: white" th:text="${cliente.tipo}"></p>
       				</div>
       				<div style="display: flex; flex-direction: row; margin-top: 5px">
-	      				<p style="margin-right: 5px; color: white">Cliente: </p>
-		      			<p style="margin-right: 5px; color: white" th:text="${conta.cliente}"></p>
+	      				<p style="margin-right: 5px; color: white">Endereço: </p>
+		      			<p style="margin-right: 5px; color: white" th:text="${cliente.endereco}"></p>
       				</div>
       			</div>
       		</li>	
       	</ul>
   
+    	
     	<div class="btn-block" style="text-decoration:none; padding: 5px">
-    		<a class="ancor" style="text-decoration:none; padding: 5px" href="/home/new">Nova Conta</a>      
+    		<a class="ancor" style="text-decoration:none; padding: 5px" href="/home/newCliente">Novo Cliente</a>      
     	</div>
     	<hr>
     	<div class="btn-block" style="text-decoration:none; padding: 5px">
-    		<a class="ancor" style="text-decoration:none; background-color: red; padding: 5px" href="/clientes">Clientes</a>      
+    		<a class="ancor" style="text-decoration:none; padding: 5px" href="/home">Voltar</a>      
     	</div>
+    	
     </div>
   </body>
 </html>

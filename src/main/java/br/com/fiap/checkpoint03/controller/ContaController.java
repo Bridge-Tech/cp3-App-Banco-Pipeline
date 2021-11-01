@@ -26,7 +26,7 @@ public class ContaController {
 		return modelAndView;
 	}
 	
-	@RequestMapping("/novaConta")	
+	@RequestMapping("/home/new")	
 	public String create() {
 		return "cadastroConta";
 	}
