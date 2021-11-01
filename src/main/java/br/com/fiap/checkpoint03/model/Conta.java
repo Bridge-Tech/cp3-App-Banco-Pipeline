@@ -11,18 +11,18 @@ import lombok.Data;
 @Entity
 public class Conta {
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@Id 
+	public int id;
 	
-	private int agencia;
+	public int agencia;
 	
-	private int numero;
+	public int numero;
 	
-	private Long saldo;
+	public Long saldo;
 	
-	private String dt_abertura;
+	public String dt_abertura;
 	
-	private String cliente;
+	public String cliente;
 	
 
 	public int getNumero() {
@@ -70,11 +70,4 @@ public class Conta {
 	
 	public Conta() {}
 
-	
-	
-	@Override
-	public String toString() {
-		return "Conta(" +
-				"id=" + numero;
-				}
 }

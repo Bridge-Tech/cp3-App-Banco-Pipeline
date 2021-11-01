@@ -3,6 +3,8 @@ package br.com.fiap.checkpoint03.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,13 +17,26 @@ import br.com.fiap.checkpoint03.model.Conta;
 @Controller
 public class ContaController {
 	
+	/*
+	 * @Autowired private ContaRepository repository;
+	 */
+	
 	@Autowired
-	private ContaRepository repository;
+	private JdbcTemplate jdbcTemplate;
+	
+	/*
+	 * @GetMapping("/home") public ModelAndView index() { ModelAndView modelAndView
+	 * = new ModelAndView("index"); List<Conta> contas = repository.findAll();
+	 * //modelAndView.addObject("contas", contas); return modelAndView; }
+	 */
 	
 	@GetMapping("/home")	
 	public ModelAndView index() {
 		ModelAndView modelAndView = new ModelAndView("index");
-		List<Conta> contas = repository.findAll();
+		String sql = "select * from tb_conta";
+		List<Conta> contas = jdbcTemplate.query(sql, 
+											BeanPropertyRowMapper.newInstance(Conta.class));
+;
 		modelAndView.addObject("contas", contas);
 		return modelAndView;
 	}
@@ -31,12 +46,21 @@ public class ContaController {
 		return "cadastroConta";
 	}
 	
-	
+	int id = 0;
 	 @PostMapping("/home") 
 	 public String save(Conta conta) {
-		 repository.save(conta);
-		 System.out.println(conta); 
+		 try {
+			 conta.setId(id++) ;
+			 String sql = "insert into tb_conta (id, agencia, numero, saldo, dt_abertura, cliente) "
+			 		+ "values ( " + conta.id + ", " + conta.agencia + ", " + conta.numero + ", " + conta.saldo + ", '" + conta.dt_abertura + "', '" + conta.cliente + "')";
+			 jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Conta.class));
+			 System.out.println(conta);
+			 
+
+		 }catch(Exception exception) {}
 		 return "index"; 	 
 	 }
+	 
+	 
 	
 }

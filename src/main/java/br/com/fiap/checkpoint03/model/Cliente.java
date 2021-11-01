@@ -12,18 +12,18 @@ import lombok.Data;
 @Entity
 public class Cliente {
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@Id 
+	public int id;
 	
-	private String nome;
+	public String nome;
 	
-	private String dt_nascimento;
+	public String dt_nascimento;
 	
-	private String tipo;
+	public String tipo;
 	
-	private String documento;
+	public String documento;
 	
-	private String endereco;
+	public String endereco;
 	
 
 	public String getNome() {
