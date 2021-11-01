@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 	<meta charset="UTF-8">
 	<head>
     <title>Home</title>
@@ -146,33 +146,19 @@
     </style>
   </head>
   <body>
-    <div class="main-block">
-      <!-- <h1>Nova Conta</h1>
-      <form action="/">
-        <hr>
-        <div class="account-type">
-          <input type="radio" value="none" id="radioOne" name="account" checked/>
-          <label for="radioOne" class="radio">Corrente</label>
-          <input type="radio" value="none" id="radioTwo" name="account" />
-          <label for="radioTwo" class="radio">Poupança</label>
-        </div>
-        <hr>
-        <label id="icon" for="name"><i class="fas"></i></label>
-        <input type="text" name="name" id="name" placeholder="Agencia" required/>
-        <label id="icon" for="name"><i class="fas"></i></label>
-        <input type="text" name="name" id="name" placeholder="Numero" required/>
-        <label id="icon" for="name"><i class="fas"></i></label>
-        <input type="text" name="name" id="name" placeholder="Saldo" required/>
-        <label id="icon" for="name"><i class="fas"></i></label>
-        <input type="password" name="name" id="name" placeholder="Data Abertura" required/>
-        <hr>
-        <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
-        </div>
-        <div class="btn-block">
-          <a href="/home">Cancel</a>
-        </div>
-      </form> -->
+    
+    
+  	<p th:text="${contas}"></p>	
+  	<div class="main-block">
+  	
+      	
+     	<ul th:each="conta : ${conta}">
+      		<li></li>
+      	</ul>
+  
+    	<div class="btn-block">
+    		<a href="/novaConta">Nova Conta</a>      
+    	</div>
     </div>
   </body>
 </html>

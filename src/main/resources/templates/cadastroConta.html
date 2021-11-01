@@ -1,33 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-	<h1>Insira os dados da conta</h1>
-	<form action="/task" method="post">
-
-        <label for="agencia">Agencia</label>
-        <input id="title" name="title">
-
-
-        <label for="title">Número</label>
-        <input id="title" name="title">
-
-        <label for="description">Descrição</label>
-        <textarea name="description" id="description" rows="" cols=""></textarea>
-
-        <label for="points">Pontos</label>
-        <input name="points" id="points" type="range">
-
-        <a href="/task">Cancelar</a>
-        <button>Salvar</button>
-
-    </form>
-
-</body>
-</html>
- -->
-
 <!DOCTYPE html>
 <html>
 	<meta charset="UTF-8">
@@ -178,7 +148,7 @@
   <body>
     <div class="main-block">
       <h1>Nova Conta</h1>
-      <form action="/">
+      <form action="/home" method="post">
         <hr>
         <div class="account-type">
           <input type="radio" value="none" id="radioOne" name="account" checked/>
@@ -187,14 +157,16 @@
           <label for="radioTwo" class="radio">Poupança</label>
         </div>
         <hr>
-        <label id="icon" for="name"><i class="fas"></i></label>
-        <input type="text" name="name" id="name" placeholder="Agencia" required/>
-        <label id="icon" for="name"><i class="fas"></i></label>
-        <input type="text" name="name" id="name" placeholder="Numero" required/>
-        <label id="icon" for="name"><i class="fas"></i></label>
-        <input type="text" name="name" id="name" placeholder="Saldo" required/>
-        <label id="icon" for="name"><i class="fas"></i></label>
-        <input type="password" name="name" id="name" placeholder="Data Abertura" required/>
+        <label id="icon" for="cliente"><i class="fas"></i></label>
+        <input type="text" name="cliente" id="cliente" placeholder="Cliente  " required/>
+        <label id="icon" for="agencia"><i class="fas"></i></label>
+        <input type="text" name="agencia" id="agencia" placeholder="Agencia" required/>
+        <label id="icon" for="numero"><i class="fas"></i></label>
+        <input type="text" name="numero" id="numero" placeholder="Numero" required/>
+        <label id="icon" for="saldo"><i class="fas"></i></label>
+        <input type="password" name="saldo" id="saldo" placeholder="Saldo" required/>
+        <label id="icon" for="abertura"><i class="fas"></i></label>
+        <input type="text" name="abertura" id="abertura" placeholder="Data Abertura" required/>
         <hr>
         <div class="btn-block">
           <button type="submit" href="/">Submit</button>
