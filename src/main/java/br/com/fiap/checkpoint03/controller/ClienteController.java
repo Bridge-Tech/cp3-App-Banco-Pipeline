@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import br.com.fiap.checkpoint03.controller.repository.ClienteRepository;
 import br.com.fiap.checkpoint03.model.Cliente;
-import br.com.fiap.checkpoint03.model.Conta;
 
 @Controller
 public class ClienteController {

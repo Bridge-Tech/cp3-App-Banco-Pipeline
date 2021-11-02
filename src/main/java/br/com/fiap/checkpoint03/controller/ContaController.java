@@ -11,24 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.fiap.checkpoint03.controller.repository.ContaRepository;
 import br.com.fiap.checkpoint03.model.Conta;
 
 @Controller
 public class ContaController {
 	
-	/*
-	 * @Autowired private ContaRepository repository;
-	 */
-	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
-	/*
-	 * @GetMapping("/home") public ModelAndView index() { ModelAndView modelAndView
-	 * = new ModelAndView("index"); List<Conta> contas = repository.findAll();
-	 * //modelAndView.addObject("contas", contas); return modelAndView; }
-	 */
 	
 	@GetMapping("/home")	
 	public ModelAndView index() {
@@ -49,15 +38,14 @@ public class ContaController {
 	int id = 0;
 	 @PostMapping("/home") 
 	 public String save(Conta conta) {
-		 try {
-			 conta.setId(id++) ;
+		try {
+		 	id++; 
+		 	conta.setId(id);
 			 String sql = "insert into tb_conta (id, agencia, numero, saldo, dt_abertura, cliente) "
 			 		+ "values ( " + conta.id + ", " + conta.agencia + ", " + conta.numero + ", " + conta.saldo + ", '" + conta.dt_abertura + "', '" + conta.cliente + "')";
 			 jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Conta.class));
 			 System.out.println(conta);
-			 
-
-		 }catch(Exception exception) {}
+		}catch(Exception exception) {}
 		 return "index"; 	 
 	 }
 	 
