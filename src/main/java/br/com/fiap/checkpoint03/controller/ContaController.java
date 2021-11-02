@@ -41,7 +41,7 @@ public class ContaController {
 		try {
 		 	id++; 
 		 	conta.setId(id);
-			 String sql = "insert into tb_conta (id, agencia, numero, saldo, dt_abertura, cliente) "
+			 String sql = "insert into tb_conta (id, agencia, numero, vl_saldo, dt_abertura, cliente) "
 			 		+ "values ( " + conta.id + ", " + conta.agencia + ", " + conta.numero + ", " + conta.saldo + ", '" + conta.dt_abertura + "', '" + conta.cliente + "')";
 			 jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Conta.class));
 			 System.out.println(conta);

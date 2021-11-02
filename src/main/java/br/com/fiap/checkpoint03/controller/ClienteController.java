@@ -42,7 +42,8 @@ public class ClienteController {
 	@PostMapping("/clientes") 
 	 public String save(Cliente cliente) {
 		 try {
-			 cliente.setId(id++) ;
+			 id++;
+			 cliente.setId(id) ;
 			 String sql = "insert into tb_cliente (id, nome, endereco, tipo, documento, dt_nascimento) "
 			 		+ "values ( " + cliente.id + ", '" + cliente.nome + "', '" + cliente.endereco + "', '" + cliente.tipo + "', '" + cliente.documento + "', '" + cliente.dt_nascimento + "')";
 			 jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Cliente.class));
